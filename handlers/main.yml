@@ -1,0 +1,8 @@
+---
+- name: init aide database
+  action: command /usr/bin/aide -c /etc/aide/aide.conf --init
+  notify:
+    - new aide database
+
+- name: new aide database
+  action: command /bin/cp /var/lib/aide/aide.db.new /var/lib/aide/aide.db
