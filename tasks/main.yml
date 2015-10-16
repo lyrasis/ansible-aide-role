@@ -13,7 +13,7 @@
     lineinfile:
       dest: /etc/default/aide
       regexp: '^MAILTO'
-      line: "MAILTO="
+      line: "MAILTO={{ email_to }}"
       state: present
     tags:
       - install
@@ -22,7 +22,7 @@
     lineinfile:
       dest: /etc/default/aide
       regexp: '^QUIETREPORTS'
-      line: "QUIETREPORTS=yes"
+      line: "QUIETREPORTS={{ quiet_reports }}"
       state: present
     tags:
       - install
@@ -31,7 +31,7 @@
     lineinfile: 
       dest=/etc/aide/aide.conf 
       regexp="^Checksums" 
-      line="Checksums = sha256" 
+      line="Checksums = {{ checksums }}" 
       state=present
     tags:
       - install

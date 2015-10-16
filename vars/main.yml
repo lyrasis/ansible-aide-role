@@ -1,2 +1,4 @@
 ---
 # vars file for aide
+quiet_reports=yes
+checksums=sha256
