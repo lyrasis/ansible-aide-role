@@ -1,3 +1,0 @@
----
-aide_new_db: /var/lib/aide.db.new.gz
-aide_db: /var/lib/aide.db.gz
