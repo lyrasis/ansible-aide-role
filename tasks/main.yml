@@ -1,5 +1,5 @@
 ---
-# install the AIDE IDS on a server
+# apt-install the AIDE IDS on the server
 
   - name: Install all those dependencies
     apt: pkg={{item}} state=present
@@ -9,7 +9,7 @@
     tags:
       - install
 
-  - name: change up the email to send to us
+  - name: set where the reports are emailed
     lineinfile:
       dest: /etc/default/aide
       regexp: '^MAILTO'
@@ -18,7 +18,7 @@
     tags:
       - install
 
-  - name: no need for an email if nothing has changed
+  - name: Do not send an email if nothing has changed
     lineinfile:
       dest: /etc/default/aide
       regexp: '^QUIETREPORTS'
@@ -36,7 +36,7 @@
     tags:
       - install
 
-  - name: change up aide.conf to standards
+  - name: change up aide.conf to standards set in aide_ignore_list
     lineinfile:
       dest: /etc/aide/aide.conf
       regexp: "{{ item.regex }}"
