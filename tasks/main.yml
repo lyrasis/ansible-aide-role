@@ -21,7 +21,7 @@
   - name: Do not send an email if nothing has changed
     lineinfile:
       dest: /etc/default/aide
-      regexp: '^QUIETREPORTS'
+      regexp: '^# QUIETREPORTS'
       line: "QUIETREPORTS={{ quiet_reports }}"
       state: present
     tags:
