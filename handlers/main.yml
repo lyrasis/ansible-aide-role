@@ -4,5 +4,6 @@
   notify:
     - new aide database
 
-- name: new aide database
-  action: command /bin/cp /var/lib/aide/aide.db.new /var/lib/aide/aide.db
+- name: make new aide database
+  action: command /bin/cp {{ aide_new_db }} {{ aide_db }}
+
