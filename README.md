@@ -19,6 +19,13 @@ quiet_reports - set to yes if you don't want reports when nothing has changed
 aide_ignore_list - this is a list of all the things your adding to the excludes list
 ```
 
+In your vars you'll want to define a list of things/paths/files to ignore for the aide_ignore_list var like so:
+```
+    - { regex: 'what to match ', line: 'replace with this ' }
+For example:
+    - { regex: '^!/some/path', line: '!/some/path/.*' }
+```
+
 Example Playbook
 ----------------
 
