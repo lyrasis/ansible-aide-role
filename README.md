@@ -16,6 +16,7 @@ checksums - In aide.conf you can choose how many checksums to run. If you want t
 aide_new_db - Used by the handler to determine where to put the new aide database
 aide_db -  Used by the handler to know where the current aide database is
 quiet_reports - set to yes if you don't want reports when nothing has changed
+aide_ignore_list - this is a list of all the things your adding to the excludes list
 ```
 
 Example Playbook
