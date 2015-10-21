@@ -7,10 +7,10 @@ Role Variables
 ```
 aide_new_db - Used by the handler in handlers/main.yml to determine where to put the new aide database
 aide_db -  Used by the handler in handlers/main.yml to know where the current aide database is
-email_to - In /etc/default/aide where the email reports are to be sent.
-quiet_reports - In /etc/default/aide set to yes if you don't want reports when nothing has changed
+aide_email_to - In /etc/default/aide where the email reports are to be sent.
+aide_quiet_reports - In /etc/default/aide set to yes if you don't want reports when nothing has changed
 aide_ignore_list - In /etc/aide/aide.conf this is a list of all the things your adding to the excludes list
-checksums - In /etc/ainde/aide.conf you can choose how many checksums to run. If you want to sacrifice security for speed, just use 1.
+aide_checksums - In /etc/ainde/aide.conf you can choose how many checksums to run. If you want to sacrifice security for speed, just use 1.
 
 ```
 
