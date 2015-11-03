@@ -12,6 +12,7 @@
   - name: set where the reports are emailed
     lineinfile:
       dest: /etc/default/aide
+      backup: yes
       regexp: '^MAILTO'
       line: "MAILTO={{ aide_email_to }}"
       state: present
@@ -30,13 +31,23 @@
   - name: Just do the sha256 checksum or it takes forever
     lineinfile: 
       dest=/etc/aide/aide.conf 
+      backup=yes
       regexp="^Checksums" 
       line="Checksums = {{ aide_checksums }}" 
       state=present
     tags:
       - install
 
-  - name: change up aide.conf to standards set in aide_ignore_list
+  - name: Remove all the current ignore list in aide.conf
+    lineinfile:
+      dest=/etc/aide/aide.conf
+      backup=yes
+      regexp="^#!|!/"
+      state=absent 
+    tags:
+      - install
+
+  - name: change up aide.conf to standards set in aide_ignore_list var
     lineinfile:
       dest: /etc/aide/aide.conf
       regexp: "{{ item.regex }}"
