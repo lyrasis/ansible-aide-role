@@ -53,7 +53,7 @@
       regexp: "{{ item.regex }}"
       line: "{{ item.line }}"
       state: present
-    with_items: aide_ignore_list
+    with_items: "{{ aide_ignore_list }}"
     tags:
       - install
 
