@@ -2,7 +2,7 @@
 - name: init aide database
   action: command /usr/bin/aide -c /etc/aide/aide.conf --init
   notify:
-    - new aide database
+    - init aide database
 
 - name: make new aide database
   action: command /bin/cp {{ aide_new_db }} {{ aide_db }}
